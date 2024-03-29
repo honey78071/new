@@ -1,0 +1,33 @@
+{% extends "navfooter.html" %}
+{% block we %} 
+<div style="padding-left: 259px;padding-right: 259px;">
+    <h1 style="text-align:center"> Student Record</h1>
+    <div class="mb-3">
+      <form action="/datasave" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}                    
+        <label for="exampleFormControlInput1" class="form-label">NAME</label>
+        <input type="TEXT" name="fname" class="form-control" id="exampleFormControlInput1" placeholder="ENTER YOUR NAME"required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="ENTER YOUR EMAIL"required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">PHONE NUMBER</label>
+        <input type="NUMBER" name="number" class="form-control" id="exampleFormControlInput1" placeholder="ENTER YOUR NUMBER"required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">MESSAGE</label>
+        <textarea  name= "msg"class="form-control" id="exampleFormControlTextarea1" rows="3"placeholder="ENTER YOUR MESSAGE"required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">uploadimage</label>
+        <input type="file" name="img" class="form-control" id="exampleFormControlInput1" placeholder="upload your image"required>
+      </div>
+      <div style="text-align:center">
+
+        <button type="submit" class="btn btn-secondary">Done</button>
+        <form>
+      </div>
+</div>
+{% endblock we %}

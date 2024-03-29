@@ -1,0 +1,33 @@
+{% extends "navfooter.html" %}
+{% block we %} 
+<div style="padding-left: 259px;padding-right: 259px;">
+    <h1 style="text-align:center"> update Record</h1>
+    <div class="mb-3">
+      <form action="/updatethis/{{up.id}}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}                    
+        <label for="exampleFormControlInput1" class="form-label">NAME</label>
+        <input type="TEXT"value="{{up.username}}"name="fname" class="form-control" id="exampleFormControlInput1" placeholder="ENTER YOUR NAME">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" value="{{up.useremail}}"name="email" class="form-control" id="exampleFormControlInput1" placeholder="ENTER YOUR EMAIL">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">PHONE NUMBER</label>
+        <input type="NUMBER"value="{{up.phonenumber}}" name="number" class="form-control" id="exampleFormControlInput1" placeholder="ENTER YOUR NUMBER">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">MESSAGE</label>
+        <textarea  name= "msg"class="form-control" id="exampleFormControlTextarea1" rows="3"placeholder="ENTER YOUR MESSAGE">{{up.message}}</textarea>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">upload image</label>
+        <input type="file"value="{{up.myimage}}" name="img" class="form-control" id="exampleFormControlInput1" placeholder="upload your image">
+      </div>
+      <div style="text-align:center">
+
+        <button type="submit" class="btn btn-secondary">update</button>
+        <form>
+      </div>
+</div>
+{% endblock we %}
